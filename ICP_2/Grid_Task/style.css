@@ -1,0 +1,16 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 70px 70px 70px;
+    grid-gap: 5px 5px;
+}
+.center{
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: 200px;
+    margin-left: 500px;
+}
+.grid-container > div {
+    width: 70px;
+    height: 70px;
+}
