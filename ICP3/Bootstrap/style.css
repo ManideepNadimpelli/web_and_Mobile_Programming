@@ -1,0 +1,25 @@
+.col-lg-12 {
+    white-space: nowrap !important;
+    max-width: 100%;
+    overflow: auto;
+}
+.col-lg-3 {
+    float: none !important;
+    max-width: 33%;
+    max-height: 90%;
+    min-height: 90%;
+    display: inline-block !important;
+}
+body{
+    font-family: Lato;
+}
+.light{
+    color: #bc3907;
+}
+.dark{
+    color: #2c1277;
+}
+img {
+    vertical-align: middle;
+    height: 150px
+}
