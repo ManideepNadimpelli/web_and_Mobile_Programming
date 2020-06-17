@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85a5b6cc-b745-43d5-ad73-009458cd7a1a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Rock-Paper-Scissors/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Rock-Paper-Scissors/script.js" afterDir="false" />
-    </list>
+    <list default="true" id="85a5b6cc-b745-43d5-ad73-009458cd7a1a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +22,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1dQIYA9n71FFpI8Z39H9fwD5j6M" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -74,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1592350934756</updated>
       <workItem from="1592350935895" duration="7983000" />
-      <workItem from="1592362547235" duration="1697000" />
+      <workItem from="1592362547235" duration="1951000" />
     </task>
     <servers />
   </component>
@@ -91,5 +92,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
