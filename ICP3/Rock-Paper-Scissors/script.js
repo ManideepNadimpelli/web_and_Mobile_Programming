@@ -10,34 +10,34 @@ if (computerChoice < 0.34) {
 }
 const compare = function (choice1, choice2) {
     if (choice1 === choice2) {
-        swal("Both matched");
+        return "Both matched";
     }
     if (choice1 === "rock") {
         if (choice2 === "scissors") {
-            swal("Winner!!");
+            return "Winner!!";
         } else {
-            swal("Better luck next time...");
+            return "Better luck next time...";
         }
     }
     if (choice1 === "paper") {
         if (choice2 === "rock") {
             // paper wins
-            swal("Winner!!");
+            return "Winner!!";
         } else {
             // scissors wins
-            swal("Better luck next time...");
+            return "Better luck next time...";
         }
     }
     if (choice1 === "scissors") {
         if (choice2 === "rock") {
             // rock wins
-            swal("Better luck next time...");
+            return "Better luck next time...";
         } else {
             // scissors wins
-            swal("Winner!!");
+            return "Winner!!";
         }
     }
 }
 document.write("<p>User Choice:" + " " + userChoice + "</p>");
 document.write("<p>Computer Choice:" + " " + computerChoice + "</p>");
-compare(userChoice,computerChoice);
+swal(compare(userChoice,computerChoice));
