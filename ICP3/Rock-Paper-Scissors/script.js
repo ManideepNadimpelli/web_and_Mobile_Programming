@@ -8,7 +8,7 @@ if (computerChoice < 0.34) {
 } else {
     computerChoice = "scissors";
 }
-const compare = function (choice1, choice2) {
+const compare = function (choice1, choice2) {                // written a function for comparing values
     if (choice1 === choice2) {
         return "Both matched";
     }
@@ -39,5 +39,5 @@ const compare = function (choice1, choice2) {
     }
 }
 document.write("<p>User Choice:" + " " + userChoice + "</p>");
-document.write("<p>Computer Choice:" + " " + computerChoice + "</p>");
-swal(compare(userChoice,computerChoice));
+document.write("<p>Computer Choice:" + " " + computerChoice + "</p>");        // displaying values
+swal(compare(userChoice,computerChoice));                              // catching the end result value value and displaying by sweetalert.
