@@ -1,0 +1,29 @@
+
+
+<div class="row">
+  <div class="col-md-5">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter time in secs" [(ngModel)]="enteredTime" type="text">
+    </mat-form-field>
+  </div>
+    <div class="col-md-2">
+      <button mat-raised-button color="primary" (click)="startTimer()"  type="submit"><i class="fa fa-plus" aria-hidden="true"></i>
+        Add Timer</button>
+    </div>
+</div>
+<!--
+<countdown [config]="{leftTime: 30, demand: true}"></countdown>
+-->
+
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>
+    <div class="row">
+      <countdown #cd1 [config]="{leftTime: leftTime , demand: true}" (event)="handleEvent($event)"></countdown>
+      <button (click)="cd1.begin()" class="btn btn-link btn-sm">Start</button>
+      <button (click)="cd1.pause()" class="btn btn-link btn-sm">pause</button>
+      <button (click)="cd1.resume()" class="btn btn-link btn-sm">resume</button>
+      <button (click)="cd1.stop()" class="btn btn-link btn-sm">stop</button>
+      <button (click)="cd1.restart()" class="btn btn-link btn-sm">restart</button>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
