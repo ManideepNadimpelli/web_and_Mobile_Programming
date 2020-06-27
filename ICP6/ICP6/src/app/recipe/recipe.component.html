@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        rel="stylesheet"
+        id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+</head>
+
+<body class="bodytag">
+<br>
+<br>
+<h2><b>&nbsp;&nbsp;&nbsp;&nbsp;Search for any food !!
+</b></h2><br>
+<form>
+  <div class="form-group">
+    <div class="form-group col-lg-6  input-group">
+      <input type="text" class="form-control" placeholder="Food item name" name="item" [(ngModel)]="item" #recipe>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <button type="button" class="btn btn-success" (click)="getRecipeDetails()">Search</button>
+    </div><br>
+  </div>
+</form>
+<div *ngIf="recipeData " >
+  <div class="row card-columns">
+    <div class="card bg-light col-md-3" style="padding-left: 10px">
+      <div class="card-body ">
+        <p class="card-text"><strong> Recipe 1: {{recipeData.hits[0].recipe.label}} </strong></p>
+        <aside>
+          <img src="{{recipeData.hits[0].recipe.image}}" style="height: 100px; border-radius: 50px">
+        </aside>
+        <p class="card-text"> Diet Label: {{recipeData.hits[0].recipe.dietLabels[0]}}</p>
+      <p><strong>Health Labels: </strong></p>
+        <div *ngFor="let item of recipeData.hits[0].recipe.healthLabels | slice:0:3; let i = index">
+        <p class="card-text">{{item}}</p>
+        </div>
+        <div class="source">
+        <a href="{{recipeData.hits[0].recipe.url}}"><strong>Click here for Recipe</strong></a>
+          <p>Source: {{recipeData.hits[0].recipe.source}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card bg-light offset-md-1 col-md-3">
+      <div class="card-body ">
+        <p class="card-text"><strong> Recipe 2: {{recipeData.hits[1].recipe.label}} </strong></p>
+        <aside>
+          <img src="{{recipeData.hits[1].recipe.image}}" style="height: 100px; border-radius: 50px">
+        </aside>
+        <p class="card-text"> Diet Label: {{recipeData.hits[1].recipe.dietLabels[0]}}</p>
+        <p><strong>Health Labels: </strong></p>
+        <div *ngFor="let item of recipeData.hits[1].recipe.healthLabels | slice:0:3">
+          <p class="card-text">{{item}}</p>
+        </div>
+        <div class="source">
+          <a href="{{recipeData.hits[1].recipe.url}}"><strong>Click here for Recipe</strong></a>
+          <p>Source: {{recipeData.hits[1].recipe.source}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card bg-light offset-md-1 col-md-3">
+      <div class="card-body ">
+        <p class="card-text"><strong> Recipe 3: {{recipeData.hits[2].recipe.label}} </strong></p>
+        <aside>
+          <img src="{{recipeData.hits[2].recipe.image}}" style="height: 100px; border-radius: 50px">
+        </aside>
+        <p class="card-text"> Diet Label: {{recipeData.hits[2].recipe.dietLabels[0]}}</p>
+        <p><strong>Health Labels: </strong></p>
+        <div *ngFor="let item of recipeData.hits[2].recipe.healthLabels | slice:0:3">
+          <p class="card-text">{{item}}</p>
+        </div>
+        <div class="source">
+          <a href="{{recipeData.hits[2].recipe.url}}"><strong>Click here for Recipe</strong></a>
+          <p>Source: {{recipeData.hits[2].recipe.source}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

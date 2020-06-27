@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        rel="stylesheet"
+        id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+</head>
+
+<body class="bodytag">
+<br>
+<br>
+<h2><b>&nbsp;&nbsp;&nbsp;&nbsp;Search for any food !!
+</b></h2><br>
+<form>
+  <div class="form-group">
+    <div class="form-group col-lg-6  input-group">
+      <input type="text" class="form-control" placeholder="Food item name" name="item" [(ngModel)]="item" #recipe>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <button type="button" class="btn btn-success" (click)="getPlaceDetails()">Search</button>
+    </div><br>
+  </div>
+</form>
+<div *ngIf="placeData">
+  <div class=" row card-columns">
+    <div class="card bg-light offset-md-1 col-md-4">
+      <div class="card-body ">
+        <p><strong>Recommended Venue</strong></p>
+        <p class="card-text"><strong>Name: </strong>{{placeData.response.groups[0].items[0].venue.name}}</p>
+        <p class="card-text"><strong>Distance: </strong>{{placeData.response.groups[0].items[0].venue.location.distance}} m</p>
+        <p class="card-text"><strong>Address: </strong>{{placeData.response.groups[0].items[0].venue.location.formattedAddress}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

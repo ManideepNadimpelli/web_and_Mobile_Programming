@@ -1,0 +1,16 @@
+.bodytag {
+  background-image: url("../../assets/recipe.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 99vh;
+}
+
+aside {
+  padding-left: 15px;
+  margin-left: 15px;
+  float: right;
+}
+.source {
+  text-align: center;
+}
