@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        rel="stylesheet"
+        id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+</head>
+
+<body class="bodytag">
+<br>
+<br>
+<h2><b>&nbsp;&nbsp;&nbsp;&nbsp;Search for any food !!
+</b></h2><br>
+<form>
+  <div class="form-group">
+    <div class="form-group col-lg-6  input-group">
+      <input type="text" class="form-control" placeholder="Food item name" name="item" [(ngModel)]="item" #recipe>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <button type="button" class="btn btn-success" (click)="getNutritionDetails()">Search</button>
+    </div><br>
+  </div>
+</form>
+<div *ngIf="nutritionData">
+  <div class=" row card-columns">
+    <div class="card bg-light offset-md-1 col-md-2">
+      <div class="card-body ">
+        <p class="card-text"> No. of Calories : {{nutritionData.hits[0].fields.nf_calories}}</p>
+      </div>
+    </div>
+  </div>
+  <div class=" row card-columns">
+    <div class="card bg-light offset-md-1 col-md-2">
+      <div class="card-body ">
+        <p class="card-text">Weight in grams : {{nutritionData.hits[0].fields.nf_serving_weight_grams}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
