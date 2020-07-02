@@ -1,0 +1,16 @@
+.example-card {
+  max-width: 500px;
+}
+
+.button-row {
+  margin: 10px 0;
+}
+
+.body_tag {
+  background-image: url("../../assets/book_details.jpg");
+}
+
+.mat-card {
+  margin-left: 30vh;
+  padding-top: 10px;
+}
