@@ -7,6 +7,7 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { CoursesComponent } from '../../courses/courses.component';
+import {WeatherForecastComponent} from '../../weather-forecast/weather-forecast.component';
 
 import {
   MatButtonModule,
@@ -24,6 +25,9 @@ import {FileUploadModule} from 'ng2-file-upload';
 import {FullCalendarModule} from '@fullcalendar/angular';
 import {AttendanceComponent} from '../../attendance/attendance.component';
 import {ProjectsComponent} from '../../projects/projects.component';
+import {MatCardModule} from '@angular/material/card';
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -41,7 +45,9 @@ import {ProjectsComponent} from '../../projects/projects.component';
         MatAutocompleteModule,
         MatProgressSpinnerModule,
         FileUploadModule,
-        FullCalendarModule
+        FullCalendarModule,
+        MatCardModule,
+        ToastrModule.forRoot()
     ],
   declarations: [
     DashboardComponent,
@@ -49,7 +55,8 @@ import {ProjectsComponent} from '../../projects/projects.component';
     NotificationsComponent,
     CoursesComponent,
       AttendanceComponent,
-      ProjectsComponent
+      ProjectsComponent,
+      WeatherForecastComponent
 
   ]
 })

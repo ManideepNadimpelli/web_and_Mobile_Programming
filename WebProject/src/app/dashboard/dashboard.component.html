@@ -1,2 +1,31 @@
 <div class="main-content">
+    <div class="container-fluid">
+        <div class="row" *ngIf="sylArray.length>0" >
+            <div *ngFor="let syllabus of sylArray">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>Courses Enrolled</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <h4>
+                            {{syllabus.semester}}
+                        </h4>
+                        <h4>
+                            {{syllabus.course}}
+                        </h4>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+            <!--<div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let syllabus of sylArray">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        {{syllabus.semester}}
+                        {{syllabus.course}}
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </div>
 </div>

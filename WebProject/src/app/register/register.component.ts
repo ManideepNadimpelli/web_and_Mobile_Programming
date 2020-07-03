@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
   submitted = false;
   optionSelected: any;
   private result: any;
+  private data: any;
   constructor(private router: Router, private formBuilder: FormBuilder , private authService: AuthenticationService) { }
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -42,12 +43,23 @@ export class RegisterComponent implements OnInit {
       'emailId': this.registerForm.value.email,
       'password': this.registerForm.value.password,
     };
-    this.authService.addUser(userDetails);
-    Swal.fire({
-      type: 'success',
-      title: 'Registered Successfully',
-      timer: 2000
-    });
-    this.router.navigate(['/login'])
+    this.authService.addUser(userDetails)
+        .subscribe(data => {
+          console.log('user data ' + data);
+          if (data.email === this.registerForm.value.email) {
+            Swal.fire({
+              type: 'error',
+              title: 'User already exits',
+              timer: 2000
+            });
+          } else {
+            Swal.fire({
+              type: 'success',
+              title: 'Registered Successfully',
+              timer: 2000
+            });
+            this.router.navigate(['/login'])
+          }
+        });
   }
 }

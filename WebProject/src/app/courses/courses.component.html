@@ -10,26 +10,26 @@
                         <form class="updateForm" (ngSubmit)="registerCourse()">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="semester">Semester</label>
-                                    <select class="form-control" id="semester">
-                                        <option>-- Select --</option>
-                                        <option>Fall 2020</option>
-                                        <option>Spring 2021</option>
-                                    </select>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Semester</mat-label>
+                                        <mat-select [(ngModel)]="selectedSemValue" name="semester">
+                                            <mat-option *ngFor="let semester of semesters" [value]="semester.value">
+                                                {{semester.viewValue}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="course">Courses</label>
-                                    <select class="form-control" id="course">
-                                        <option>-- Select --</option>
-                                        <option>CS 5051 - Big Data Programming</option>
-                                        <option>CS 5052 - Python and Deep Learning</option>
-                                        <option>CS 5053 - Advanced Software Engineering</option>
-                                        <option>CS 5054 - Principles of Big Data</option>
-                                        <option>CS 5055 - Big Data Analytics</option>
-                                        <option>CS 5056 - Web/Mobile Programming</option>
-                                    </select>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Courses</mat-label>
+                                        <mat-select [(ngModel)]="selectedCourseValue" name="course">
+                                            <mat-option *ngFor="let course of courses" [value]="course.value">
+                                                {{course.viewValue}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
                                 </div>
                             </div>
                             <button mat-raised-button type="submit" class="btn btn-info">Enroll</button>

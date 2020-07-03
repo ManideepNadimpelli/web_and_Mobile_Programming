@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
   public result: any;
   public loggedUser: string;
   constructor( private router: Router, private formBuilder: FormBuilder, private authService: AuthenticationService, private appComponent: AppComponent) { }
-
   loginForm: FormGroup;
   submitted = false;
   ngOnInit() {

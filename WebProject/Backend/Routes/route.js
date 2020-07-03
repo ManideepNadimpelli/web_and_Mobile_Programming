@@ -4,32 +4,46 @@ const cors = require('cors');
 
 router.use(cors());
 var User = require('../models/User');
+var syllabus = require('../models/Syllabus');
 
+router.get('/verifyUser', function (req, res, next) {
+  User.findOne({email: req.body.email}).then(user =>{
+    if (user) {
+      res.send('user exits')
+    } else {
+      res.send('new user')
+    }
+  }).catch(err => {
+    res.send('error: ' + err)
+  })
+});
 
 router.get('/getSyllabusByUserId/:userId', function (req, res, next) {
-  console.log('Get request for syllabus');
+  console.log('Get request by user id syllabus');
   syllabus.find({userId: req.params.userId})
-    .exec(function (err, syllabus) {
-      if(err){
-        console.log("Error retrieving syllabus");
-      }else {
-        res.json(syllabus);
-      }
-    })
+      .exec(function (err, syllabus) {
+        if(err){
+          console.log("Error retrieving syllabus");
+        }else {
+          res.json(syllabus);
+        }
+      })
 });
 router.post('/syllabus', function (req, res, next) {
-  console.log('Request', req.body);
-  const userSyllabus = {
-    userId:req.body.userID,
-    Syllabus:req.body.syllabusArray
+
+  var syllabusObj = {
+    semester: req.body.syllabus.semester ,
+    course: req.body.syllabus.course
   }
-  syllabus.create(userSyllabus, function (err, post) {
+  console.log('Request in syllabus - ', req.body);
+  syllabus.findOneAndUpdate({userId: req.body.userId},
+      { "$push": { "Syllabus": syllabusObj } },
+      { "new": true }, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 
 });
-
 router.post('/login', function (req, res, next) {
   User.findOne({email: req.body.email}).then(user =>{
     if (user) {
@@ -44,6 +58,8 @@ router.post('/login', function (req, res, next) {
       res.send('User does not exist')
     }
   }).catch(err => {
+    console.log("eroor");
+
     res.send('error: ' + err)
   })
 });
@@ -81,10 +97,21 @@ router.post('/register', function (req, res, next) {
     password: req.body.password,
     typeOfUser: req.body.typeOfUser
   }
-  User.create(userData, function (err, post) {
-    if (err) return next(err);
-    res.json(post);
-  });
+  User.findOne({email: req.body.emailId}).then(user => {
+    console.log(res.json(user));
+    if (user) {
+      console.log('user exists');
+      res.send('user exits')
+    }
+    else {
+      User.create(userData, function (err, post) {
+        if (err) return next(err);
+        res.json(post);
+      });
+    }
+  }).catch(err => {
+    res.send('error: ' + err)
+  })
 });
 
 module.exports = router;
