@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity implements MainActivity1 {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(uid.getText().toString().equals("aravind") &&
-                        pwd.getText().toString().equals("aravind")) {
+                if(uid.getText().toString().equals("manideep") &&
+                        pwd.getText().toString().equals("@manideep")) {
                     Toast.makeText(getApplicationContext(),
                             "Logged In",Toast.LENGTH_SHORT).show();
                     reDirectToHomePage();
