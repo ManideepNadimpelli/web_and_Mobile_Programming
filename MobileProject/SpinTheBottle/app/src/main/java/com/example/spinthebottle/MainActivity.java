@@ -1,11 +1,15 @@
 package com.example.spinthebottle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Random;
 
@@ -51,5 +55,11 @@ public class MainActivity extends AppCompatActivity {
             lastDir = newDir;
             bottle.startAnimation(rotate);
         }
+    }
+
+    public void logout(View view) {
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(getApplicationContext(), LogInActivity.class));
+        finish();
     }
 }
