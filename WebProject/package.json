@@ -42,7 +42,7 @@
     "@progress/kendo-angular-l10n": "^2.0.0",
     "@progress/kendo-angular-popup": "^3.0.1",
     "@types/gapi.client.youtube": "^3.0.1",
-    "ajv": "6.10.0",
+    "ajv": "6.12.3",
     "angular-bootstrap-md": "^9.0.0",
     "arrive": "2.4.1",
     "bootstrap": "4.3.1",
